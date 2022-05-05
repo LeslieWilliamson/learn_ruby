@@ -18,9 +18,8 @@ def main
     loop do
         dice.display
         puts "Hit any key to roll again, 'q' to quit."
-        dice.roll
-
         break if (gets.chomp == 'q')
+        dice.roll
     end
 end
 
