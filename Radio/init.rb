@@ -1,5 +1,6 @@
 #!usr/bin/env ruby
 require_relative "classes/Radio"
+require_relative "classes/SecureRadio"
 
 am_radio = Radio.AM
 puts am_radio.status
@@ -28,6 +29,18 @@ fm_radio.volume = 12
 fm_radio.frequency = 87.5
 puts fm_radio.status
 puts "-" * 10
+
+fm_radio.play
+fm_radio.play
+fm_radio.play
+fm_radio.play
+puts "-" * 10
+
+sec_radio = SecureRadio.new
+sec_radio.play
+sec_radio.play
+sec_radio.play
+sec_radio.play
 
 # Can only create a class using factory methods
 # radio = Radio.new
