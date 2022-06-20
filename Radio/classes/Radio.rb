@@ -1,3 +1,15 @@
+class VolumeTooHigh < StandardError
+
+    attr_accessor :volume
+
+    def initialize(volume)
+        super("Volume set too high.")
+        @volume = volume
+    end
+
+end
+
+
 class Radio
     attr_reader :band, :volume, :frequency
  
@@ -21,7 +33,11 @@ class Radio
     end
 
     def volume= (vol)
-        return unless (1..10).include? vol
+        unless (1..10).include? vol
+            raise VolumeTooHigh.new(vol)
+            vol
+        end
+
         @volume = vol
     end
 

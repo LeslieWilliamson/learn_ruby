@@ -11,7 +11,12 @@ am_radio.frequency = 600
 puts am_radio.status
 puts "-" * 10
 
-am_radio.volume = 12
+begin
+    am_radio.volume = 12
+rescue => exception
+    puts "#{exception.full_message}"    
+end
+
 am_radio.frequency = 1800
 puts am_radio.status
 puts "-" * 10
@@ -25,7 +30,11 @@ fm_radio.frequency = 102.5
 puts fm_radio.status
 puts "-" * 10
 
-fm_radio.volume = 12
+begin
+    am_radio.volume = 12
+rescue => exception
+    puts "#{exception.full_message}"    
+end
 fm_radio.frequency = 87.5
 puts fm_radio.status
 puts "-" * 10
